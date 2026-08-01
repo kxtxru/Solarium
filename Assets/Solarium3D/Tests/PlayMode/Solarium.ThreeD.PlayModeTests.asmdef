@@ -1,0 +1,13 @@
+{
+  "name": "Solarium.ThreeD.PlayModeTests",
+  "rootNamespace": "Solarium.ThreeD.Tests",
+  "references": [
+    "Solarium.Runtime",
+    "Solarium.ThreeD.Runtime",
+    "Unity.ML-Agents",
+    "Unity.InferenceEngine"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

@@ -1,2 +1,9 @@
 ﻿<Solution>
+  <Project Path="Solarium.ThreeD.Runtime.csproj" />
+  <Project Path="Solarium.Runtime.csproj" />
+  <Project Path="Solarium.ThreeD.Editor.csproj" />
+  <Project Path="Solarium.Editor.csproj" />
+  <Project Path="Solarium.ThreeD.PlayModeTests.csproj" />
+  <Project Path="Solarium.ThreeD.EditModeTests.csproj" />
+  <Project Path="Solarium.EditModeTests.csproj" />
 </Solution>

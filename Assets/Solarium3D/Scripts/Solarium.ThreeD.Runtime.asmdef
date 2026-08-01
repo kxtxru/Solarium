@@ -1,0 +1,13 @@
+{
+  "name": "Solarium.ThreeD.Runtime",
+  "rootNamespace": "Solarium.ThreeD",
+  "references": [
+    "Solarium.Runtime",
+    "Unity.InputSystem",
+    "Unity.ML-Agents",
+    "Unity.InferenceEngine",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.ugui"
+  ],
+  "autoReferenced": true
+}

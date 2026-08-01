@@ -1,0 +1,12 @@
+# Unity ML-Agents Release 23 Python trainer.
+mlagents==1.1.0
+
+# Keep the legacy ONNX exporter used by ML-Agents 1.1.0. Newer PyTorch
+# versions require onnxscript and conflict with this ML-Agents release.
+torch==2.2.1
+onnx==1.15.0
+protobuf==3.20.3
+numpy==1.23.5
+
+# ML-Agents 1.1.0 imports pkg_resources, removed in setuptools 81+.
+setuptools<81

@@ -1,0 +1,15 @@
+{
+  "name": "Solarium.ThreeD.EditModeTests",
+  "rootNamespace": "Solarium.ThreeD.Tests",
+  "references": [
+    "Solarium.Runtime",
+    "Solarium.ThreeD.Runtime",
+    "Unity.ML-Agents"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

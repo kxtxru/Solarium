@@ -1,0 +1,10 @@
+{
+  "name": "Solarium.Runtime",
+  "rootNamespace": "Solarium",
+  "references": [
+    "Unity.InputSystem",
+    "Unity.ML-Agents",
+    "Unity.InferenceEngine"
+  ],
+  "autoReferenced": true
+}

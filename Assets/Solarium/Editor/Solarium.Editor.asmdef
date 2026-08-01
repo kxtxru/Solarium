@@ -1,0 +1,13 @@
+{
+  "name": "Solarium.Editor",
+  "rootNamespace": "Solarium.Editor",
+  "references": [
+    "Solarium.Runtime",
+    "Unity.ML-Agents",
+    "Unity.InferenceEngine"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

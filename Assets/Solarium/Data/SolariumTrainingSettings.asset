@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d185f2fa12a794740ad090ab3d67d444, type: 3}
+  m_Name: SolariumTrainingSettings
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolariumTrainingSettings
+  rayCount: 12
+  spawnClearance: 1.25
+  spawnAttempts: 40
+  wallThickness: 0.5
+  foodRespawnSeconds: 5
+  survivalRewardPerSecond: 0.001
+  foodReward: 0.25
+  goldenFoodReward: 0.75
+  healingReward: 1.25
+  damagePenalty: -1
+  deathPenalty: -3
+  sprintPenaltyPerSecond: -0.002
+  stuckPenaltyPerSecond: -0.02
+  wallCollisionPenalty: -0.03
+  wallPenaltyInterval: 0.5
+  mudPenaltyPerSecond: -0.003
+  supplyPickupReward: 0.05
+  supplyDepositReward: 0.45
+  stuckWindowSeconds: 2.5
+  stuckMinimumDisplacement: 0.3
+  normalFoodEnergy: 28
+  goldenFoodEnergy: 55
+  healingAmount: 32
+  healingCooldown: 6
+  enemyDamage: 16
+  enemySpeed: 2.25
+  enemyDetectionRange: 6
+  enemyLoseRange: 8
+  enemyRetreatSeconds: 1.4
+  enemyKnockbackSpeed: 4.5
+  enemyKnockbackSeconds: 0.2
+  hazardDamagePerSecond: 5
+  hazardEnergyPerSecond: 4
+  mudSpeedMultiplier: 0.42
+  shelterReserveEnergy: 38
+  interactionRange: 0.9
+  interactionCooldown: 0.3

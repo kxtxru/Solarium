@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e12dac97e8eba4a90912a0e9ce6f69, type: 3}
+  m_Name: SolariumPalette3D
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumPalette3D
+  materials:
+  - {fileID: 2100000, guid: 5b2e5f5401029e24a9a1ae4c469e7b7c, type: 2}
+  - {fileID: 2100000, guid: 9315b35568ed44244b6421b6e99c042f, type: 2}
+  - {fileID: 2100000, guid: b43f771227e89144fa29857a76283bab, type: 2}
+  - {fileID: 2100000, guid: 868f666a3736123469afd89f18f42e9f, type: 2}
+  - {fileID: 2100000, guid: 0cb2f8731666c3141afa1d904697ed77, type: 2}
+  - {fileID: 2100000, guid: cb49f5665e59f45478be94aa7259979a, type: 2}
+  - {fileID: 2100000, guid: aaa29fd5afbca7a4a9ebdb2dec527286, type: 2}
+  - {fileID: 2100000, guid: 92f661274ee3a3346b88778d38eb370c, type: 2}
+  - {fileID: 2100000, guid: b0288b595977bae4ea3336a8d7649199, type: 2}
+  - {fileID: 2100000, guid: 790c1dcfbaa1f5b48a1d448b00cc3b8a, type: 2}
+  - {fileID: 2100000, guid: 36895c2e12d8f394bb4a7b904a9f8a4a, type: 2}
+  - {fileID: 2100000, guid: 572737c3895ceb9488202fb743c4d262, type: 2}
+  - {fileID: 2100000, guid: 3319b75333c284a4b8107a0fa4478ad0, type: 2}
+  - {fileID: 2100000, guid: 2b11096750948794b873447c49b2bdcb, type: 2}
+  - {fileID: 2100000, guid: a540caaffdebc1f47be24b7f29dd1903, type: 2}
+  - {fileID: 2100000, guid: 9c5c391503ebd3e499ada06a5902a03e, type: 2}
+  - {fileID: 2100000, guid: 4f32c808bdd7fb54e8daa61dabdd7fc0, type: 2}

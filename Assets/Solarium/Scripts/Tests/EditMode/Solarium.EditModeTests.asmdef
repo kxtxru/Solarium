@@ -1,0 +1,14 @@
+{
+  "name": "Solarium.EditModeTests",
+  "rootNamespace": "Solarium.Tests",
+  "references": [
+    "Solarium.Runtime",
+    "Unity.ML-Agents"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

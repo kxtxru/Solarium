@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - SolariumGameplay3D
+  - SolariumGround3D
+  - SolariumVisual3D
+  - SolariumEffects3D
   - 
   - 
   - 

@@ -41,6 +41,10 @@
 
 # Visual Studio cache directory
 .vs/
+.venv/
+/results/
+/Assets/ML-Agents/
+/Assets/ML-Agents.meta
 
 # Gradle cache directory
 .gradle/
