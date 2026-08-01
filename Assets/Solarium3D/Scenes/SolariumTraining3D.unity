@@ -14,17 +14,17 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.17, g: 0.25, b: 0.25, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_LinearFogStart: 32
+  m_LinearFogEnd: 80
+  m_AmbientSkyColor: {r: 0.34, g: 0.46, b: 0.48, a: 1}
+  m_AmbientEquatorColor: {r: 0.2, g: 0.28, b: 0.25, a: 1}
+  m_AmbientGroundColor: {r: 0.08, g: 0.1, b: 0.08, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &104817512
+--- !u!1 &256472961
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,249 +127,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 104817514}
-  - component: {fileID: 104817513}
-  m_Layer: 0
-  m_Name: Training Runtime
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &104817513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104817512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e241b296f4eb5943909fd1fd3dd4d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.TrainingRuntimeSettings
-  simulationTimeScale: 20
---- !u!4 &104817514
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104817512}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &564661764
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 564661772}
-  - component: {fileID: 564661771}
-  - component: {fileID: 564661770}
-  - component: {fileID: 564661769}
-  - component: {fileID: 564661768}
-  - component: {fileID: 564661767}
-  - component: {fileID: 564661765}
-  - component: {fileID: 564661766}
-  m_Layer: 8
-  m_Name: Sol
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &564661765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolAgent3D
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
---- !u!114 &564661766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
-  DecisionPeriod: 5
-  DecisionStep: 0
-  TakeActionsBetweenDecisions: 1
---- !u!114 &564661767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
-  m_BrainParameters:
-    VectorObservationSize: 194
-    NumStackedVectorObservations: 1
-    m_ActionSpec:
-      m_NumContinuousActions: 2
-      BranchSizes: 0200000002000000
-    VectorActionSize: 
-    VectorActionDescriptions:
-    - move_x
-    - move_z
-    - sprint
-    - interact
-    VectorActionSpaceType: 0
-    hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
-  m_InferenceDevice: 0
-  m_BehaviorType: 0
-  m_BehaviorName: Solarium
-  TeamId: 0
-  m_UseChildSensors: 1
-  m_UseChildActuators: 1
-  m_DeterministicInference: 0
-  m_ObservableAttributeHandling: 0
---- !u!114 &564661768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolObservations3D
-  rayCount: 12
-  visionRange: 8
-  nearWallDistance: 0.7
-  drawDebugSensors: 0
---- !u!114 &564661769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolVitals
-  maxHealth: 100
-  currentHealth: 100
-  damageCooldown: 0.45
-  maxEnergy: 100
-  currentEnergy: 100
-  baseEnergyDrainPerSecond: 0.7
-  movementEnergyCost: 0.45
-  sprintEnergyCost: 1.2
-  movementSpeed: 3.5
-  sprintMultiplier: 1.65
---- !u!136 &564661770
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.42
-  m_Height: 1.1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &564661771
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!4 &564661772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564661764}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1245356497}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &741056213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 741056219}
-  - component: {fileID: 741056218}
-  - component: {fileID: 741056217}
-  - component: {fileID: 741056216}
-  - component: {fileID: 741056215}
-  - component: {fileID: 741056214}
+  - component: {fileID: 256472969}
+  - component: {fileID: 256472968}
+  - component: {fileID: 256472967}
+  - component: {fileID: 256472966}
+  - component: {fileID: 256472965}
+  - component: {fileID: 256472964}
+  - component: {fileID: 256472963}
+  - component: {fileID: 256472962}
   m_Layer: 8
   m_Name: TrainingArena3D_6
   m_TagString: Untagged
@@ -377,13 +142,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &741056214
+--- !u!114 &256472962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741056213}
+  m_GameObject: {fileID: 256472961}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
@@ -391,18 +156,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
   settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
   palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
-  agent: {fileID: 845413349}
+  agent: {fileID: 1283136186}
   visualsEnabled: 0
   baseSeed: 512360
   useFixedSeed: 0
   fixedSeed: 512360
---- !u!114 &741056215
+--- !u!114 &256472963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741056213}
+  m_GameObject: {fileID: 256472961}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
@@ -410,13 +175,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
   movingAverageWindow: 50
   writeCsv: 1
---- !u!114 &741056216
+--- !u!114 &256472964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741056213}
+  m_GameObject: {fileID: 256472961}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
@@ -426,47 +191,77 @@ MonoBehaviour:
   manualDifficulty: 0
   arenaSizeMultiplier: 1
   environmentParameterName: solarium_difficulty
---- !u!114 &741056217
+--- !u!114 &256472965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741056213}
+  m_GameObject: {fileID: 256472961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62687cc2ed36bb4f8c3449c78fdc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.InfiniteWorld3D
+  mode: 2
+  chunkSize: 24
+  activeRadius: 1
+  configuredSeed: 512360
+  survivalFloatingOriginThresholdChunks: 32
+  saveDebounceSeconds: 0.75
+--- !u!114 &256472966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256472961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c041577e1f80b9e40a8ca48533b87982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralChunkGenerator3D
+--- !u!114 &256472967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256472961}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
---- !u!114 &741056218
+--- !u!114 &256472968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741056213}
+  m_GameObject: {fileID: 256472961}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
---- !u!4 &741056219
+--- !u!4 &256472969
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741056213}
+  m_GameObject: {fileID: 256472961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28, y: 0, z: 11}
+  m_LocalPosition: {x: 96, y: 0, z: 48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 845413356}
+  - {fileID: 1283136193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &758148128
+--- !u!1 &385367637
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,14 +269,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 758148136}
-  - component: {fileID: 758148135}
-  - component: {fileID: 758148134}
-  - component: {fileID: 758148133}
-  - component: {fileID: 758148132}
-  - component: {fileID: 758148131}
-  - component: {fileID: 758148129}
-  - component: {fileID: 758148130}
+  - component: {fileID: 385367645}
+  - component: {fileID: 385367644}
+  - component: {fileID: 385367643}
+  - component: {fileID: 385367642}
+  - component: {fileID: 385367641}
+  - component: {fileID: 385367640}
+  - component: {fileID: 385367638}
+  - component: {fileID: 385367639}
   m_Layer: 8
   m_Name: Sol
   m_TagString: Untagged
@@ -489,13 +284,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &758148129
+--- !u!114 &385367638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
+  m_GameObject: {fileID: 385367637}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
@@ -505,617 +300,13 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
---- !u!114 &758148130
+--- !u!114 &385367639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
-  DecisionPeriod: 5
-  DecisionStep: 4
-  TakeActionsBetweenDecisions: 1
---- !u!114 &758148131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
-  m_BrainParameters:
-    VectorObservationSize: 194
-    NumStackedVectorObservations: 1
-    m_ActionSpec:
-      m_NumContinuousActions: 2
-      BranchSizes: 0200000002000000
-    VectorActionSize: 
-    VectorActionDescriptions:
-    - move_x
-    - move_z
-    - sprint
-    - interact
-    VectorActionSpaceType: 0
-    hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
-  m_InferenceDevice: 0
-  m_BehaviorType: 0
-  m_BehaviorName: Solarium
-  TeamId: 0
-  m_UseChildSensors: 1
-  m_UseChildActuators: 1
-  m_DeterministicInference: 0
-  m_ObservableAttributeHandling: 0
---- !u!114 &758148132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolObservations3D
-  rayCount: 12
-  visionRange: 8
-  nearWallDistance: 0.7
-  drawDebugSensors: 0
---- !u!114 &758148133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolVitals
-  maxHealth: 100
-  currentHealth: 100
-  damageCooldown: 0.45
-  maxEnergy: 100
-  currentEnergy: 100
-  baseEnergyDrainPerSecond: 0.7
-  movementEnergyCost: 0.45
-  sprintEnergyCost: 1.2
-  movementSpeed: 3.5
-  sprintMultiplier: 1.65
---- !u!136 &758148134
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.42
-  m_Height: 1.1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &758148135
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!4 &758148136
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758148128}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 881280945}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &845413348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 845413356}
-  - component: {fileID: 845413355}
-  - component: {fileID: 845413354}
-  - component: {fileID: 845413353}
-  - component: {fileID: 845413352}
-  - component: {fileID: 845413351}
-  - component: {fileID: 845413349}
-  - component: {fileID: 845413350}
-  m_Layer: 8
-  m_Name: Sol
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &845413349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolAgent3D
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
---- !u!114 &845413350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
-  DecisionPeriod: 5
-  DecisionStep: 0
-  TakeActionsBetweenDecisions: 1
---- !u!114 &845413351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
-  m_BrainParameters:
-    VectorObservationSize: 194
-    NumStackedVectorObservations: 1
-    m_ActionSpec:
-      m_NumContinuousActions: 2
-      BranchSizes: 0200000002000000
-    VectorActionSize: 
-    VectorActionDescriptions:
-    - move_x
-    - move_z
-    - sprint
-    - interact
-    VectorActionSpaceType: 0
-    hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
-  m_InferenceDevice: 0
-  m_BehaviorType: 0
-  m_BehaviorName: Solarium
-  TeamId: 0
-  m_UseChildSensors: 1
-  m_UseChildActuators: 1
-  m_DeterministicInference: 0
-  m_ObservableAttributeHandling: 0
---- !u!114 &845413352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolObservations3D
-  rayCount: 12
-  visionRange: 8
-  nearWallDistance: 0.7
-  drawDebugSensors: 0
---- !u!114 &845413353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolVitals
-  maxHealth: 100
-  currentHealth: 100
-  damageCooldown: 0.45
-  maxEnergy: 100
-  currentEnergy: 100
-  baseEnergyDrainPerSecond: 0.7
-  movementEnergyCost: 0.45
-  sprintEnergyCost: 1.2
-  movementSpeed: 3.5
-  sprintMultiplier: 1.65
---- !u!136 &845413354
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.42
-  m_Height: 1.1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &845413355
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!4 &845413356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845413348}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 741056219}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &881280939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 881280945}
-  - component: {fileID: 881280944}
-  - component: {fileID: 881280943}
-  - component: {fileID: 881280942}
-  - component: {fileID: 881280941}
-  - component: {fileID: 881280940}
-  m_Layer: 8
-  m_Name: TrainingArena3D_5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &881280940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881280939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
-  settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
-  palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
-  agent: {fileID: 758148129}
-  visualsEnabled: 0
-  baseSeed: 412357
-  useFixedSeed: 0
-  fixedSeed: 412357
---- !u!114 &881280941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881280939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
-  movingAverageWindow: 50
-  writeCsv: 1
---- !u!114 &881280942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881280939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.DifficultyController
-  useManualDifficulty: 0
-  manualDifficulty: 0
-  arenaSizeMultiplier: 1
-  environmentParameterName: solarium_difficulty
---- !u!114 &881280943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881280939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
---- !u!114 &881280944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881280939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
---- !u!4 &881280945
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881280939}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 758148136}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1245356491
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1245356497}
-  - component: {fileID: 1245356496}
-  - component: {fileID: 1245356495}
-  - component: {fileID: 1245356494}
-  - component: {fileID: 1245356493}
-  - component: {fileID: 1245356492}
-  m_Layer: 8
-  m_Name: TrainingArena3D_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1245356492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245356491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
-  settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
-  palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
-  agent: {fileID: 564661765}
-  visualsEnabled: 0
-  baseSeed: 12345
-  useFixedSeed: 0
-  fixedSeed: 12345
---- !u!114 &1245356493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245356491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
-  movingAverageWindow: 50
-  writeCsv: 1
---- !u!114 &1245356494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245356491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.DifficultyController
-  useManualDifficulty: 0
-  manualDifficulty: 0
-  arenaSizeMultiplier: 1
-  environmentParameterName: solarium_difficulty
---- !u!114 &1245356495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245356491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
---- !u!114 &1245356496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245356491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
---- !u!4 &1245356497
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245356491}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28, y: 0, z: -11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 564661772}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1346860999
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1346861007}
-  - component: {fileID: 1346861006}
-  - component: {fileID: 1346861005}
-  - component: {fileID: 1346861004}
-  - component: {fileID: 1346861003}
-  - component: {fileID: 1346861002}
-  - component: {fileID: 1346861000}
-  - component: {fileID: 1346861001}
-  m_Layer: 8
-  m_Name: Sol
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1346861000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolAgent3D
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
---- !u!114 &1346861001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
@@ -1124,13 +315,13 @@ MonoBehaviour:
   DecisionPeriod: 5
   DecisionStep: 2
   TakeActionsBetweenDecisions: 1
---- !u!114 &1346861002
+--- !u!114 &385367640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
@@ -1159,13 +350,13 @@ MonoBehaviour:
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
---- !u!114 &1346861003
+--- !u!114 &385367641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
@@ -1175,13 +366,13 @@ MonoBehaviour:
   visionRange: 8
   nearWallDistance: 0.7
   drawDebugSensors: 0
---- !u!114 &1346861004
+--- !u!114 &385367642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
@@ -1197,13 +388,13 @@ MonoBehaviour:
   sprintEnergyCost: 1.2
   movementSpeed: 3.5
   sprintMultiplier: 1.65
---- !u!136 &1346861005
+--- !u!136 &385367643
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1220,13 +411,13 @@ CapsuleCollider:
   m_Height: 1.1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1346861006
+--- !u!54 &385367644
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -1247,22 +438,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!4 &1346861007
+--- !u!4 &385367645
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346860999}
+  m_GameObject: {fileID: 385367637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2117616978}
+  m_Father: {fileID: 1607827227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1570607717
+--- !u!1 &395807677
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1270,122 +461,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1570607723}
-  - component: {fileID: 1570607722}
-  - component: {fileID: 1570607721}
-  - component: {fileID: 1570607720}
-  - component: {fileID: 1570607719}
-  - component: {fileID: 1570607718}
-  m_Layer: 8
-  m_Name: TrainingArena3D_4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1570607718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570607717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
-  settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
-  palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
-  agent: {fileID: 1888284394}
-  visualsEnabled: 0
-  baseSeed: 312354
-  useFixedSeed: 0
-  fixedSeed: 312354
---- !u!114 &1570607719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570607717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
-  movingAverageWindow: 50
-  writeCsv: 1
---- !u!114 &1570607720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570607717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.Runtime::Solarium.DifficultyController
-  useManualDifficulty: 0
-  manualDifficulty: 0
-  arenaSizeMultiplier: 1
-  environmentParameterName: solarium_difficulty
---- !u!114 &1570607721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570607717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
---- !u!114 &1570607722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570607717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
---- !u!4 &1570607723
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570607717}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28, y: 0, z: 11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1888284401}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1635305744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1635305750}
-  - component: {fileID: 1635305749}
-  - component: {fileID: 1635305748}
-  - component: {fileID: 1635305747}
-  - component: {fileID: 1635305746}
-  - component: {fileID: 1635305745}
+  - component: {fileID: 395807685}
+  - component: {fileID: 395807684}
+  - component: {fileID: 395807683}
+  - component: {fileID: 395807682}
+  - component: {fileID: 395807681}
+  - component: {fileID: 395807680}
+  - component: {fileID: 395807679}
+  - component: {fileID: 395807678}
   m_Layer: 8
   m_Name: TrainingArena3D_2
   m_TagString: Untagged
@@ -1393,13 +476,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1635305745
+--- !u!114 &395807678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635305744}
+  m_GameObject: {fileID: 395807677}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
@@ -1407,18 +490,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
   settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
   palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
-  agent: {fileID: 1989449841}
+  agent: {fileID: 1372475031}
   visualsEnabled: 0
   baseSeed: 112348
   useFixedSeed: 0
   fixedSeed: 112348
---- !u!114 &1635305746
+--- !u!114 &395807679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635305744}
+  m_GameObject: {fileID: 395807677}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
@@ -1426,13 +509,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
   movingAverageWindow: 50
   writeCsv: 1
---- !u!114 &1635305747
+--- !u!114 &395807680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635305744}
+  m_GameObject: {fileID: 395807677}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
@@ -1442,47 +525,77 @@ MonoBehaviour:
   manualDifficulty: 0
   arenaSizeMultiplier: 1
   environmentParameterName: solarium_difficulty
---- !u!114 &1635305748
+--- !u!114 &395807681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635305744}
+  m_GameObject: {fileID: 395807677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62687cc2ed36bb4f8c3449c78fdc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.InfiniteWorld3D
+  mode: 2
+  chunkSize: 24
+  activeRadius: 1
+  configuredSeed: 112348
+  survivalFloatingOriginThresholdChunks: 32
+  saveDebounceSeconds: 0.75
+--- !u!114 &395807682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395807677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c041577e1f80b9e40a8ca48533b87982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralChunkGenerator3D
+--- !u!114 &395807683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395807677}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
---- !u!114 &1635305749
+--- !u!114 &395807684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635305744}
+  m_GameObject: {fileID: 395807677}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
---- !u!4 &1635305750
+--- !u!4 &395807685
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635305744}
+  m_GameObject: {fileID: 395807677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalPosition: {x: 0, y: 0, z: -48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1989449848}
+  - {fileID: 1372475038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1888284393
+--- !u!1 &630693467
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1490,14 +603,298 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1888284401}
-  - component: {fileID: 1888284400}
-  - component: {fileID: 1888284399}
-  - component: {fileID: 1888284398}
-  - component: {fileID: 1888284397}
-  - component: {fileID: 1888284396}
-  - component: {fileID: 1888284394}
-  - component: {fileID: 1888284395}
+  - component: {fileID: 630693475}
+  - component: {fileID: 630693474}
+  - component: {fileID: 630693473}
+  - component: {fileID: 630693472}
+  - component: {fileID: 630693471}
+  - component: {fileID: 630693470}
+  - component: {fileID: 630693469}
+  - component: {fileID: 630693468}
+  m_Layer: 8
+  m_Name: TrainingArena3D_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &630693468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
+  settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
+  palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
+  agent: {fileID: 1917457963}
+  visualsEnabled: 1
+  baseSeed: 12345
+  useFixedSeed: 0
+  fixedSeed: 12345
+--- !u!114 &630693469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
+  movingAverageWindow: 50
+  writeCsv: 1
+--- !u!114 &630693470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.DifficultyController
+  useManualDifficulty: 0
+  manualDifficulty: 0
+  arenaSizeMultiplier: 1
+  environmentParameterName: solarium_difficulty
+--- !u!114 &630693471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62687cc2ed36bb4f8c3449c78fdc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.InfiniteWorld3D
+  mode: 2
+  chunkSize: 24
+  activeRadius: 1
+  configuredSeed: 12345
+  survivalFloatingOriginThresholdChunks: 32
+  saveDebounceSeconds: 0.75
+--- !u!114 &630693472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c041577e1f80b9e40a8ca48533b87982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralChunkGenerator3D
+--- !u!114 &630693473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
+--- !u!114 &630693474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
+--- !u!4 &630693475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630693467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -96, y: 0, z: -48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1917457970}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &681912686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681912694}
+  - component: {fileID: 681912693}
+  - component: {fileID: 681912692}
+  - component: {fileID: 681912691}
+  - component: {fileID: 681912690}
+  - component: {fileID: 681912689}
+  - component: {fileID: 681912688}
+  - component: {fileID: 681912687}
+  m_Layer: 8
+  m_Name: TrainingArena3D_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &681912687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
+  settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
+  palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
+  agent: {fileID: 1008680978}
+  visualsEnabled: 0
+  baseSeed: 312354
+  useFixedSeed: 0
+  fixedSeed: 312354
+--- !u!114 &681912688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
+  movingAverageWindow: 50
+  writeCsv: 1
+--- !u!114 &681912689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.DifficultyController
+  useManualDifficulty: 0
+  manualDifficulty: 0
+  arenaSizeMultiplier: 1
+  environmentParameterName: solarium_difficulty
+--- !u!114 &681912690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62687cc2ed36bb4f8c3449c78fdc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.InfiniteWorld3D
+  mode: 2
+  chunkSize: 24
+  activeRadius: 1
+  configuredSeed: 312354
+  survivalFloatingOriginThresholdChunks: 32
+  saveDebounceSeconds: 0.75
+--- !u!114 &681912691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c041577e1f80b9e40a8ca48533b87982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralChunkGenerator3D
+--- !u!114 &681912692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
+--- !u!114 &681912693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
+--- !u!4 &681912694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681912686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -96, y: 0, z: 48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1008680985}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1008680977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008680985}
+  - component: {fileID: 1008680984}
+  - component: {fileID: 1008680983}
+  - component: {fileID: 1008680982}
+  - component: {fileID: 1008680981}
+  - component: {fileID: 1008680980}
+  - component: {fileID: 1008680978}
+  - component: {fileID: 1008680979}
   m_Layer: 8
   m_Name: Sol
   m_TagString: Untagged
@@ -1505,13 +902,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1888284394
+--- !u!114 &1008680978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
@@ -1521,13 +918,13 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
---- !u!114 &1888284395
+--- !u!114 &1008680979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
@@ -1536,13 +933,13 @@ MonoBehaviour:
   DecisionPeriod: 5
   DecisionStep: 3
   TakeActionsBetweenDecisions: 1
---- !u!114 &1888284396
+--- !u!114 &1008680980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
@@ -1571,13 +968,13 @@ MonoBehaviour:
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
---- !u!114 &1888284397
+--- !u!114 &1008680981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
@@ -1587,13 +984,13 @@ MonoBehaviour:
   visionRange: 8
   nearWallDistance: 0.7
   drawDebugSensors: 0
---- !u!114 &1888284398
+--- !u!114 &1008680982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
@@ -1609,13 +1006,13 @@ MonoBehaviour:
   sprintEnergyCost: 1.2
   movementSpeed: 3.5
   sprintMultiplier: 1.65
---- !u!136 &1888284399
+--- !u!136 &1008680983
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1632,13 +1029,13 @@ CapsuleCollider:
   m_Height: 1.1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1888284400
+--- !u!54 &1008680984
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -1659,22 +1056,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!4 &1888284401
+--- !u!4 &1008680985
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888284393}
+  m_GameObject: {fileID: 1008680977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1570607723}
+  m_Father: {fileID: 681912694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1989449840
+--- !u!1 &1283136185
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1682,14 +1079,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1989449848}
-  - component: {fileID: 1989449847}
-  - component: {fileID: 1989449846}
-  - component: {fileID: 1989449845}
-  - component: {fileID: 1989449844}
-  - component: {fileID: 1989449843}
-  - component: {fileID: 1989449841}
-  - component: {fileID: 1989449842}
+  - component: {fileID: 1283136193}
+  - component: {fileID: 1283136192}
+  - component: {fileID: 1283136191}
+  - component: {fileID: 1283136190}
+  - component: {fileID: 1283136189}
+  - component: {fileID: 1283136188}
+  - component: {fileID: 1283136186}
+  - component: {fileID: 1283136187}
   m_Layer: 8
   m_Name: Sol
   m_TagString: Untagged
@@ -1697,13 +1094,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1989449841
+--- !u!114 &1283136186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
@@ -1713,28 +1110,28 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
---- !u!114 &1989449842
+--- !u!114 &1283136187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
   DecisionPeriod: 5
-  DecisionStep: 1
+  DecisionStep: 0
   TakeActionsBetweenDecisions: 1
---- !u!114 &1989449843
+--- !u!114 &1283136188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
@@ -1763,13 +1160,13 @@ MonoBehaviour:
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
---- !u!114 &1989449844
+--- !u!114 &1283136189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
@@ -1779,13 +1176,13 @@ MonoBehaviour:
   visionRange: 8
   nearWallDistance: 0.7
   drawDebugSensors: 0
---- !u!114 &1989449845
+--- !u!114 &1283136190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
@@ -1801,13 +1198,13 @@ MonoBehaviour:
   sprintEnergyCost: 1.2
   movementSpeed: 3.5
   sprintMultiplier: 1.65
---- !u!136 &1989449846
+--- !u!136 &1283136191
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1824,13 +1221,13 @@ CapsuleCollider:
   m_Height: 1.1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1989449847
+--- !u!54 &1283136192
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -1851,22 +1248,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!4 &1989449848
+--- !u!4 &1283136193
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989449840}
+  m_GameObject: {fileID: 1283136185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1635305750}
+  m_Father: {fileID: 256472969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2117616972
+--- !u!1 &1372475030
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1874,12 +1271,251 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2117616978}
-  - component: {fileID: 2117616977}
-  - component: {fileID: 2117616976}
-  - component: {fileID: 2117616975}
-  - component: {fileID: 2117616974}
-  - component: {fileID: 2117616973}
+  - component: {fileID: 1372475038}
+  - component: {fileID: 1372475037}
+  - component: {fileID: 1372475036}
+  - component: {fileID: 1372475035}
+  - component: {fileID: 1372475034}
+  - component: {fileID: 1372475033}
+  - component: {fileID: 1372475031}
+  - component: {fileID: 1372475032}
+  m_Layer: 8
+  m_Name: Sol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1372475031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolAgent3D
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+--- !u!114 &1372475032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
+  DecisionPeriod: 5
+  DecisionStep: 1
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &1372475033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
+  m_BrainParameters:
+    VectorObservationSize: 194
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 2
+      BranchSizes: 0200000002000000
+    VectorActionSize: 
+    VectorActionDescriptions:
+    - move_x
+    - move_z
+    - sprint
+    - interact
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: Solarium
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_DeterministicInference: 0
+  m_ObservableAttributeHandling: 0
+--- !u!114 &1372475034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolObservations3D
+  rayCount: 12
+  visionRange: 8
+  nearWallDistance: 0.7
+  drawDebugSensors: 0
+--- !u!114 &1372475035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolVitals
+  maxHealth: 100
+  currentHealth: 100
+  damageCooldown: 0.45
+  maxEnergy: 100
+  currentEnergy: 100
+  baseEnergyDrainPerSecond: 0.7
+  movementEnergyCost: 0.45
+  sprintEnergyCost: 1.2
+  movementSpeed: 3.5
+  sprintMultiplier: 1.65
+--- !u!136 &1372475036
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.42
+  m_Height: 1.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1372475037
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!4 &1372475038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372475030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395807685}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1504424381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504424383}
+  - component: {fileID: 1504424382}
+  m_Layer: 0
+  m_Name: Training Runtime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1504424382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504424381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e241b296f4eb5943909fd1fd3dd4d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.TrainingRuntimeSettings
+  simulationTimeScale: 20
+--- !u!4 &1504424383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504424381}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1607827219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607827227}
+  - component: {fileID: 1607827226}
+  - component: {fileID: 1607827225}
+  - component: {fileID: 1607827224}
+  - component: {fileID: 1607827223}
+  - component: {fileID: 1607827222}
+  - component: {fileID: 1607827221}
+  - component: {fileID: 1607827220}
   m_Layer: 8
   m_Name: TrainingArena3D_3
   m_TagString: Untagged
@@ -1887,13 +1523,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2117616973
+--- !u!114 &1607827220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117616972}
+  m_GameObject: {fileID: 1607827219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
@@ -1901,18 +1537,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
   settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
   palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
-  agent: {fileID: 1346861000}
+  agent: {fileID: 385367638}
   visualsEnabled: 0
   baseSeed: 212351
   useFixedSeed: 0
   fixedSeed: 212351
---- !u!114 &2117616974
+--- !u!114 &1607827221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117616972}
+  m_GameObject: {fileID: 1607827219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
@@ -1920,13 +1556,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
   movingAverageWindow: 50
   writeCsv: 1
---- !u!114 &2117616975
+--- !u!114 &1607827222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117616972}
+  m_GameObject: {fileID: 1607827219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
@@ -1936,54 +1572,869 @@ MonoBehaviour:
   manualDifficulty: 0
   arenaSizeMultiplier: 1
   environmentParameterName: solarium_difficulty
---- !u!114 &2117616976
+--- !u!114 &1607827223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117616972}
+  m_GameObject: {fileID: 1607827219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62687cc2ed36bb4f8c3449c78fdc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.InfiniteWorld3D
+  mode: 2
+  chunkSize: 24
+  activeRadius: 1
+  configuredSeed: 212351
+  survivalFloatingOriginThresholdChunks: 32
+  saveDebounceSeconds: 0.75
+--- !u!114 &1607827224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607827219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c041577e1f80b9e40a8ca48533b87982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralChunkGenerator3D
+--- !u!114 &1607827225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607827219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
---- !u!114 &2117616977
+--- !u!114 &1607827226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117616972}
+  m_GameObject: {fileID: 1607827219}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
---- !u!4 &2117616978
+--- !u!4 &1607827227
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117616972}
+  m_GameObject: {fileID: 1607827219}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28, y: 0, z: -11}
+  m_LocalPosition: {x: 96, y: 0, z: -48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1346861007}
+  - {fileID: 385367645}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1821683202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821683210}
+  - component: {fileID: 1821683209}
+  - component: {fileID: 1821683208}
+  - component: {fileID: 1821683207}
+  - component: {fileID: 1821683206}
+  - component: {fileID: 1821683205}
+  - component: {fileID: 1821683203}
+  - component: {fileID: 1821683204}
+  m_Layer: 8
+  m_Name: Sol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1821683203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolAgent3D
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+--- !u!114 &1821683204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
+  DecisionPeriod: 5
+  DecisionStep: 4
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &1821683205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
+  m_BrainParameters:
+    VectorObservationSize: 194
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 2
+      BranchSizes: 0200000002000000
+    VectorActionSize: 
+    VectorActionDescriptions:
+    - move_x
+    - move_z
+    - sprint
+    - interact
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: Solarium
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_DeterministicInference: 0
+  m_ObservableAttributeHandling: 0
+--- !u!114 &1821683206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolObservations3D
+  rayCount: 12
+  visionRange: 8
+  nearWallDistance: 0.7
+  drawDebugSensors: 0
+--- !u!114 &1821683207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolVitals
+  maxHealth: 100
+  currentHealth: 100
+  damageCooldown: 0.45
+  maxEnergy: 100
+  currentEnergy: 100
+  baseEnergyDrainPerSecond: 0.7
+  movementEnergyCost: 0.45
+  sprintEnergyCost: 1.2
+  movementSpeed: 3.5
+  sprintMultiplier: 1.65
+--- !u!136 &1821683208
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.42
+  m_Height: 1.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1821683209
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!4 &1821683210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821683202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1872855304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1872855296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872855304}
+  - component: {fileID: 1872855303}
+  - component: {fileID: 1872855302}
+  - component: {fileID: 1872855301}
+  - component: {fileID: 1872855300}
+  - component: {fileID: 1872855299}
+  - component: {fileID: 1872855298}
+  - component: {fileID: 1872855297}
+  m_Layer: 8
+  m_Name: TrainingArena3D_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1872855297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a539a7340b64248ba6a72c6aed20d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolariumEnvironment3D
+  settings: {fileID: 11400000, guid: 97d033a2b7640544ba38268174f22656, type: 2}
+  palette: {fileID: 11400000, guid: 77637d1032119664689192c7ce39d984, type: 2}
+  agent: {fileID: 1821683203}
+  visualsEnabled: 0
+  baseSeed: 412357
+  useFixedSeed: 0
+  fixedSeed: 412357
+--- !u!114 &1872855298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2230112c2b2957d4d90052fe81890a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.EpisodeStatistics
+  movingAverageWindow: 50
+  writeCsv: 1
+--- !u!114 &1872855299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd03eb23cc8e8e409f4762e0b93ec81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.DifficultyController
+  useManualDifficulty: 0
+  manualDifficulty: 0
+  arenaSizeMultiplier: 1
+  environmentParameterName: solarium_difficulty
+--- !u!114 &1872855300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62687cc2ed36bb4f8c3449c78fdc690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.InfiniteWorld3D
+  mode: 2
+  chunkSize: 24
+  activeRadius: 1
+  configuredSeed: 412357
+  survivalFloatingOriginThresholdChunks: 32
+  saveDebounceSeconds: 0.75
+--- !u!114 &1872855301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c041577e1f80b9e40a8ca48533b87982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralChunkGenerator3D
+--- !u!114 &1872855302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ccab97a4308c2409e4602879d637ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.ProceduralSpawner3D
+--- !u!114 &1872855303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1330b5f600dda854799227473f987c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.WorldObjectPool3D
+--- !u!4 &1872855304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872855296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1821683210}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1917457962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917457970}
+  - component: {fileID: 1917457969}
+  - component: {fileID: 1917457968}
+  - component: {fileID: 1917457967}
+  - component: {fileID: 1917457966}
+  - component: {fileID: 1917457965}
+  - component: {fileID: 1917457963}
+  - component: {fileID: 1917457964}
+  m_Layer: 8
+  m_Name: Sol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1917457963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2719bd62cbdf31f448bd6260bd6fffa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolAgent3D
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+--- !u!114 &1917457964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
+  DecisionPeriod: 5
+  DecisionStep: 0
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &1917457965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
+  m_BrainParameters:
+    VectorObservationSize: 194
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 2
+      BranchSizes: 0200000002000000
+    VectorActionSize: 
+    VectorActionDescriptions:
+    - move_x
+    - move_z
+    - sprint
+    - interact
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: Solarium
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_DeterministicInference: 0
+  m_ObservableAttributeHandling: 0
+--- !u!114 &1917457966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bcac8e3de8c92d44bf181cb5ae0f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.SolObservations3D
+  rayCount: 12
+  visionRange: 8
+  nearWallDistance: 0.7
+  drawDebugSensors: 0
+--- !u!114 &1917457967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2db7fc848d6e424b9f15b7e32dc6cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.Runtime::Solarium.SolVitals
+  maxHealth: 100
+  currentHealth: 100
+  damageCooldown: 0.45
+  maxEnergy: 100
+  currentEnergy: 100
+  baseEnergyDrainPerSecond: 0.7
+  movementEnergyCost: 0.45
+  sprintEnergyCost: 1.2
+  movementSpeed: 3.5
+  sprintMultiplier: 1.65
+--- !u!136 &1917457968
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.42
+  m_Height: 1.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1917457969
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!4 &1917457970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917457962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 630693475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2100001001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100001006}
+  - component: {fileID: 2100001002}
+  - component: {fileID: 2100001003}
+  - component: {fileID: 2100001004}
+  - component: {fileID: 2100001005}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &2100001002
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001001}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.12, g: 0.19, b: 0.23, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 160
+  field of view: 34
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &2100001003
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001001}
+  m_Enabled: 1
+--- !u!114 &2100001004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!114 &2100001005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c640e616fea3a4dbfe79337d6e7ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Solarium.ThreeD.Runtime::Solarium.ThreeD.IsometricCamera3D
+  target: {fileID: 1917457970}
+  environment: {fileID: 630693468}
+  pitch: 48
+  yaw: 45
+  distance: 16
+  minDistance: 8
+  maxDistance: 22
+  followSharpness: 6
+  orbitSpeed: 75
+  zoomSpeed: 1.3
+--- !u!4 &2100001006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.37577567, y: 0.34959877, z: -0.1556514, w: 0.84400594}
+  m_LocalPosition: {x: -103.57035, y: 11.890316, z: -55.57035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2100001011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100001013}
+  - component: {fileID: 2100001012}
+  m_Layer: 0
+  m_Name: Warm Sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &2100001012
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001011}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 1
+  m_Color: {r: 1, g: 0.84, b: 0.62, a: 1}
+  m_Intensity: 1.25
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &2100001013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100001011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.39098036, y: -0.25180724, z: 0.112111814, w: 0.87815624}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 104817514}
-  - {fileID: 1245356497}
-  - {fileID: 1635305750}
-  - {fileID: 2117616978}
-  - {fileID: 1570607723}
-  - {fileID: 881280945}
-  - {fileID: 741056219}
+  - {fileID: 1504424383}
+  - {fileID: 630693475}
+  - {fileID: 395807685}
+  - {fileID: 1607827227}
+  - {fileID: 681912694}
+  - {fileID: 1872855304}
+  - {fileID: 256472969}
+  - {fileID: 2100001006}
+  - {fileID: 2100001013}

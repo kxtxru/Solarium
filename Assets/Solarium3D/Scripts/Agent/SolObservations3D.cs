@@ -231,8 +231,8 @@ namespace Solarium.ThreeD
             sensor.AddObservation(hazard != null || mud != null || lava != null ? 1f : 0f);
             sensor.AddObservation(supply != null && supply.IsAvailable ? 1f : 0f);
             sensor.AddObservation(shelter != null ? 1f : 0f);
-            for (int i = 2; i < ReservedRayFeatureCount; i++)
-                sensor.AddObservation(0f);
+            sensor.AddObservation(shelter == null ? 0f : shelter.NormalizedReserve);
+            sensor.AddObservation(0f);
         }
 
         private float DamageSignal(EnemyController3D enemy, Hazard3D hazard, LavaZone3D lava)

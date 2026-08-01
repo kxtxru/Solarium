@@ -17,24 +17,25 @@ namespace Solarium.ThreeD
         [SerializeField, Min(1f)] private float orbitSpeed = 75f;
         [SerializeField, Min(0.1f)] private float zoomSpeed = 1.3f;
         private Vector3 smoothedTarget;
+        private bool subscribed;
 
         public void Initialize(SolariumEnvironment3D owner, Transform followTarget)
         {
+            Unsubscribe();
             environment = owner;
             target = followTarget;
+            Subscribe();
             Snap();
         }
 
         private void OnEnable()
         {
-            if (environment != null)
-                environment.EpisodeStarted += Snap;
+            Subscribe();
         }
 
         private void OnDisable()
         {
-            if (environment != null)
-                environment.EpisodeStarted -= Snap;
+            Unsubscribe();
         }
 
         private void LateUpdate()
@@ -73,6 +74,8 @@ namespace Solarium.ThreeD
         {
             if (environment == null)
                 return value;
+            if (environment.InfiniteWorld != null && environment.InfiniteWorld.IsInfinite)
+                return value;
             Vector2 center = Planar3D.ToPlanar(environment.transform.position);
             Vector2 half = environment.CurrentConfig.arenaSize.sqrMagnitude > 0f
                 ? environment.CurrentConfig.arenaSize * 0.5f
@@ -81,6 +84,32 @@ namespace Solarium.ThreeD
             planar.x = Mathf.Clamp(planar.x, center.x - half.x + 1f, center.x + half.x - 1f);
             planar.y = Mathf.Clamp(planar.y, center.y - half.y + 1f, center.y + half.y - 1f);
             return Planar3D.ToWorld(planar, 0.55f);
+        }
+
+        private void Subscribe()
+        {
+            if (subscribed || environment == null)
+                return;
+            environment.EpisodeStarted += Snap;
+            if (environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted += HandleOriginShift;
+            subscribed = true;
+        }
+
+        private void Unsubscribe()
+        {
+            if (!subscribed || environment == null)
+                return;
+            environment.EpisodeStarted -= Snap;
+            if (environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted -= HandleOriginShift;
+            subscribed = false;
+        }
+
+        private void HandleOriginShift(Vector3 shift)
+        {
+            smoothedTarget += shift;
+            transform.position += shift;
         }
     }
 }

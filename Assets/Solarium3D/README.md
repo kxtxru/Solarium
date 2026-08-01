@@ -4,6 +4,22 @@ Versión 3D isométrica y low-poly de Solarium. Conserva el contrato de la
 política recurrente: 194 observaciones, dos acciones continuas, dos ramas
 discretas y PPO con LSTM de memoria 128 / secuencia 32.
 
+## Mundo infinito
+
+`SolariumSurvival3D` usa un mundo determinista por chunks de 24 metros. Solo
+mantiene cargada una ventana de 3 × 3, pero conserva en disco los estados de
+las zonas visitadas, alimentos, cooldowns y raciones almacenadas. La partida
+se guarda en `Application.persistentDataPath/Solarium3D/world-v1.json` y Sol
+reaparece en el último santuario visitado.
+
+Los cuatro biomas son pradera, bosque, humedal y zona volcánica. Quitar objetos
+de memoria no modifica su estado: al volver a un chunk se reconstruye desde la
+seed y se aplican sus cambios guardados. El botón `NUEVO MUNDO` del HUD pide
+confirmación antes de sustituir la única partida automática.
+
+Las barras muestran vida y energía numéricas. Los recursos magenta se presentan
+como raciones; al depositarlas, el santuario muestra frutos y un contador `×N`.
+
 ## Crear o reparar
 
 En Unity 6000.4.10f1 usa `Tools > Solarium 3D > Create or Repair Project`.
@@ -64,6 +80,33 @@ run 2D compatible; nunca sobrescribe sus resultados:
   --run-id=solarium-3d-v1 `
   --initialize-from=solarium-persistent-memory-v3
 ```
+
+El ajuste específico del mundo infinito usa seis streams efímeros independientes
+y el run reservado `solarium-infinite-v1`:
+
+```powershell
+.\.venv\Scripts\mlagents-learn.exe Assets/Solarium3D/Training/solarium_ppo_infinite.yaml `
+  --run-id=solarium-infinite-v1 `
+  --initialize-from=solarium-persistent-memory-v3
+```
+
+La fase estratégica conserva ese checkpoint y especializa la política en
+recoger raciones, depositarlas y volver a los refugios cuando baja la energía:
+
+```powershell
+.\.venv\Scripts\mlagents-learn.exe Assets/Solarium3D/Training/solarium_ppo_infinite.yaml `
+  --run-id=solarium-strategy-v1 `
+  --initialize-from=solarium-infinite-v1
+```
+
+Los episodios de `InfiniteTraining` se segmentan cada 300 segundos simulados
+como interrupciones (no como muertes), de modo que PPO conserva el valor futuro
+y ML-Agents puede publicar recompensa media y longitud de episodio.
+
+El nuevo ONNX no sustituye a `SolariumPersistentMemoryV3.onnx` hasta superar la
+evaluación determinista de supervivencia, cambios de chunk, retornos y consumo
+de reservas. Las métricas se publican como `Solarium/Chunks Discovered`,
+`Solarium/Chunks Revisited` y `Solarium/Rations *`.
 
 Espera `Listening on port 5004`, abre `SolariumTraining3D` y pulsa Play.
 Para reanudar la misma ejecución:

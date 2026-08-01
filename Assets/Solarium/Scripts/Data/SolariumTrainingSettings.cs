@@ -11,6 +11,10 @@ namespace Solarium
         [Min(1)] public int spawnAttempts = 40;
         [Min(0.02f)] public float wallThickness = 0.5f;
         [Min(0.1f)] public float foodRespawnSeconds = 5f;
+        [Tooltip("Maximum food respawn multiplier at full curriculum difficulty.")]
+        [Min(1f)] public float maxFoodRespawnMultiplier = 3f;
+        [Tooltip("Training-only horizon for infinite worlds. Zero disables timed episode segmentation.")]
+        [Min(0f)] public float infiniteTrainingEpisodeSeconds = 300f;
 
         [Header("Rewards")]
         [Tooltip("Tiny per-second pressure to survive. Keep below resource rewards.")]
@@ -33,9 +37,16 @@ namespace Solarium
         [Min(0.1f)] public float wallPenaltyInterval = 0.5f;
         [Tooltip("Small per-second cost while crossing mud.")]
         public float mudPenaltyPerSecond = -0.003f;
-        [Tooltip("Small signal for carrying a shard; depositing it is the meaningful reward.")]
-        public float supplyPickupReward = 0.05f;
-        public float supplyDepositReward = 0.45f;
+        [Tooltip("Initial signal for learning the explicit ration pickup interaction.")]
+        public float supplyPickupReward = 0.15f;
+        [Tooltip("Main strategic reward for completing the ration-to-shelter delivery chain.")]
+        public float supplyDepositReward = 1f;
+        [Tooltip("Applied once when entering a never-before-seen logical chunk.")]
+        public float chunkDiscoveryReward = 0.03f;
+        [Tooltip("Applied once per episode when entering a previously unvisited sanctuary.")]
+        public float shelterDiscoveryReward = 0.1f;
+        [Tooltip("Maximum reward for consuming a full shelter ration without wasting energy.")]
+        public float shelterReserveUseReward = 0.6f;
         [Min(0.25f)] public float stuckWindowSeconds = 2.5f;
         [Min(0.01f)] public float stuckMinimumDisplacement = 0.3f;
 
@@ -55,6 +66,7 @@ namespace Solarium
         public float hazardEnergyPerSecond = 4f;
         [Range(0.1f, 1f)] public float mudSpeedMultiplier = 0.42f;
         public float shelterReserveEnergy = 38f;
+        [Min(1f)] public float shelterMinimumEnergyDeficit = 10f;
         [Min(0.1f)] public float interactionRange = 0.9f;
         [Min(0.05f)] public float interactionCooldown = 0.3f;
 

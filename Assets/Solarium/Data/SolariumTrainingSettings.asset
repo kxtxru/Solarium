@@ -17,6 +17,8 @@ MonoBehaviour:
   spawnAttempts: 40
   wallThickness: 0.5
   foodRespawnSeconds: 5
+  maxFoodRespawnMultiplier: 3
+  infiniteTrainingEpisodeSeconds: 300
   survivalRewardPerSecond: 0.001
   foodReward: 0.25
   goldenFoodReward: 0.75
@@ -28,8 +30,11 @@ MonoBehaviour:
   wallCollisionPenalty: -0.03
   wallPenaltyInterval: 0.5
   mudPenaltyPerSecond: -0.003
-  supplyPickupReward: 0.05
-  supplyDepositReward: 0.45
+  supplyPickupReward: 0.15
+  supplyDepositReward: 1
+  chunkDiscoveryReward: 0.03
+  shelterDiscoveryReward: 0.1
+  shelterReserveUseReward: 0.6
   stuckWindowSeconds: 2.5
   stuckMinimumDisplacement: 0.3
   normalFoodEnergy: 28
@@ -47,5 +52,6 @@ MonoBehaviour:
   hazardEnergyPerSecond: 4
   mudSpeedMultiplier: 0.42
   shelterReserveEnergy: 38
+  shelterMinimumEnergyDeficit: 10
   interactionRange: 0.9
   interactionCooldown: 0.3

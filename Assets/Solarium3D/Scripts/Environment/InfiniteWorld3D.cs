@@ -19,6 +19,7 @@ namespace Solarium.ThreeD
         [SerializeField, Min(8f)] private float chunkSize = InfiniteWorldMath3D.DefaultChunkSize;
         [SerializeField, Range(1, 2)] private int activeRadius = 1;
         [SerializeField] private int configuredSeed = 12345;
+        [SerializeField, Min(2)] private int survivalFloatingOriginThresholdChunks = 32;
         [SerializeField, Min(0.1f)] private float saveDebounceSeconds = 0.75f;
 
         private readonly Dictionary<ChunkCoord3D, LoadedChunk> loaded = new();
@@ -49,8 +50,11 @@ namespace Solarium.ThreeD
         public int EpisodeNewChunks { get; private set; }
         public int EpisodeRevisitedChunks { get; private set; }
         public ChunkCoord3D CurrentChunk => currentChunk;
+        public ChunkCoord3D OriginChunk => originChunk;
         public string SavePath => savePathOverride ?? Path.Combine(
-            Application.persistentDataPath, "Solarium3D", "world-v1.json");
+            Application.isBatchMode ? Application.temporaryCachePath : Application.persistentDataPath,
+            "Solarium3D",
+            Application.isBatchMode ? "world-v1-tests.json" : "world-v1.json");
 
         public event Action<Vector3> OriginShifted;
         public event Action WorldStateChanged;
@@ -116,8 +120,9 @@ namespace Solarium.ThreeD
             if (next != currentChunk)
             {
                 leftThisEpisode.Add(currentChunk);
-                ShiftOrigin(next);
                 currentChunk = next;
+                if (ShouldRecenter(next))
+                    ShiftOrigin(next);
                 LoadWindow(currentChunk);
                 EnterChunk(currentChunk, true);
                 MarkDirty();
@@ -187,11 +192,12 @@ namespace Solarium.ThreeD
             MarkDirty();
         }
 
-        public void VisitShelter(ShelterZone3D shelter)
+        public bool VisitShelter(ShelterZone3D shelter)
         {
             if (shelter == null || !shelter.IsStreamed)
-                return;
+                return false;
             ChunkEntityState3D state = GetEntityState(shelter.ChunkCoord, shelter.EntityId);
+            bool firstVisit = !state.visited;
             state.visited = true;
             saveData.hasLastShelter = true;
             saveData.lastShelterChunkX = shelter.ChunkCoord.x;
@@ -201,6 +207,7 @@ namespace Solarium.ThreeD
             saveData.lastShelterLocalX = local.x;
             saveData.lastShelterLocalY = local.y;
             MarkDirty(true);
+            return firstVisit;
         }
 
         public void NotifyReserveChanged()
@@ -372,10 +379,20 @@ namespace Solarium.ThreeD
             foreach (LoadedChunk chunk in loaded.Values)
                 chunk.root.position += appliedShift;
             Rigidbody body = environment.Agent.GetComponent<Rigidbody>();
-            body.position += appliedShift;
-            environment.Agent.transform.position += appliedShift;
+            Vector3 shiftedAgentPosition = body.position + appliedShift;
+            body.position = shiftedAgentPosition;
+            environment.Agent.transform.position = shiftedAgentPosition;
             originChunk = nextOrigin;
             OriginShifted?.Invoke(appliedShift);
+        }
+
+        private bool ShouldRecenter(ChunkCoord3D nextChunk)
+        {
+            int threshold = mode == WorldMode3D.InfiniteTraining
+                ? 1
+                : Mathf.Max(2, survivalFloatingOriginThresholdChunks);
+            ChunkCoord3D distance = nextChunk - originChunk;
+            return Mathf.Abs(distance.x) >= threshold || Mathf.Abs(distance.y) >= threshold;
         }
 
         private void EnterChunk(ChunkCoord3D coord, bool reward)

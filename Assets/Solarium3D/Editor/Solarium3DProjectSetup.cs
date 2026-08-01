@@ -84,17 +84,36 @@ namespace Solarium.ThreeD.Editor
             EditorApplication.Exit(0);
         }
 
+        public static void BuildWindowsForBatchMode()
+        {
+            BuildAll();
+            BuildPlayer(new[] { TrainingScenePath }, "Builds/SolariumTraining3D/SolariumTraining3D.exe");
+            BuildPlayer(new[] { SurvivalScenePath }, "Builds/Solarium3D/Solarium3D.exe");
+            EditorApplication.Exit(0);
+        }
+
         private static void CreateTrainingScene(SolariumTrainingSettings settings, SolariumPalette3D palette)
         {
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             new GameObject("Training Runtime").AddComponent<TrainingRuntimeSettings>();
+            ConfigureEnvironmentLighting();
+            CreateLightingAndVolume();
             Vector2[] positions =
             {
-                new(-28f, -11f), new(0f, -11f), new(28f, -11f),
-                new(-28f, 11f), new(0f, 11f), new(28f, 11f)
+                new(-96f, -48f), new(0f, -48f), new(96f, -48f),
+                new(-96f, 48f), new(0f, 48f), new(96f, 48f)
             };
+            SolariumEnvironment3D spectatorEnvironment = null;
             for (int i = 0; i < positions.Length; i++)
-                CreateEnvironment($"TrainingArena3D_{i + 1}", positions[i], settings, palette, false, i, false);
+            {
+                bool spectatorVisuals = i == 0;
+                SolariumEnvironment3D environment = CreateEnvironment(
+                    $"TrainingArena3D_{i + 1}", positions[i], settings, palette, false, i,
+                    spectatorVisuals, WorldMode3D.InfiniteTraining);
+                if (spectatorVisuals)
+                    spectatorEnvironment = environment;
+            }
+            CreateCamera(spectatorEnvironment, false);
             EditorSceneManager.SaveScene(scene, TrainingScenePath);
         }
 
@@ -105,7 +124,8 @@ namespace Solarium.ThreeD.Editor
             CreateLightingAndVolume();
 
             SolariumEnvironment3D environment =
-                CreateEnvironment("SurvivalArena3D", Vector2.zero, settings, palette, true, 0, true);
+                CreateEnvironment("SurvivalArena3D", Vector2.zero, settings, palette, true, 0, true,
+                    WorldMode3D.InfinitePersistent);
             DifficultyController difficulty = environment.GetComponent<DifficultyController>();
             difficulty.ManualDifficulty = 1f;
             difficulty.ArenaSizeMultiplier = 1.4f;
@@ -124,7 +144,7 @@ namespace Solarium.ThreeD.Editor
                 Debug.LogWarning($"No compatible ONNX found at {ModelPath}.");
             }
 
-            Camera showcaseCamera = CreateCamera(environment);
+            Camera showcaseCamera = CreateCamera(environment, true);
             CreateFeedback(environment, palette);
             CreateHud(environment, showcaseCamera);
             CreateEventSystem();
@@ -138,13 +158,16 @@ namespace Solarium.ThreeD.Editor
             SolariumPalette3D palette,
             bool manualDifficulty,
             int index,
-            bool visuals)
+            bool visuals,
+            WorldMode3D worldMode)
         {
             var root = new GameObject(name);
             root.layer = SolariumLayers3D.Gameplay;
             root.transform.position = Planar3D.ToWorld(position);
             root.AddComponent<WorldObjectPool3D>();
             root.AddComponent<ProceduralSpawner3D>();
+            root.AddComponent<ProceduralChunkGenerator3D>();
+            root.AddComponent<InfiniteWorld3D>();
             DifficultyController difficulty = root.AddComponent<DifficultyController>();
             difficulty.UseManualDifficulty = manualDifficulty;
             difficulty.ManualDifficulty = manualDifficulty ? 1f : 0f;
@@ -182,12 +205,14 @@ namespace Solarium.ThreeD.Editor
             requester.DecisionStep = index % 5;
             requester.TakeActionsBetweenDecisions = true;
             agent.MaxStep = 0;
-            environment.Configure(settings, palette, agent, 12345 + index * 100003, false, visuals);
+            environment.Configure(settings, palette, agent, 12345 + index * 100003, false, visuals, worldMode);
             return environment;
         }
 
-        private static Camera CreateCamera(SolariumEnvironment3D environment)
+        private static Camera CreateCamera(SolariumEnvironment3D environment, bool enableAutomatedCapture)
         {
+            if (environment == null)
+                return null;
             var go = new GameObject("Main Camera");
             go.tag = "MainCamera";
             Camera camera = go.AddComponent<Camera>();
@@ -200,7 +225,8 @@ namespace Solarium.ThreeD.Editor
             go.AddComponent<AudioListener>();
             go.AddComponent<UniversalAdditionalCameraData>().renderPostProcessing = true;
             go.AddComponent<IsometricCamera3D>().Initialize(environment, environment.Agent.transform);
-            go.AddComponent<AutomatedShowcaseCapture3D>();
+            if (enableAutomatedCapture)
+                go.AddComponent<AutomatedShowcaseCapture3D>();
             return camera;
         }
 
@@ -285,7 +311,7 @@ namespace Solarium.ThreeD.Editor
             canvasObject.AddComponent<GraphicRaycaster>();
 
             RectTransform panel = CreatePanel(canvasObject.transform, "Status Panel",
-                new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(34f, -290f), new Vector2(520f, -34f),
+                new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(34f, -360f), new Vector2(560f, -34f),
                 new Color(0.035f, 0.075f, 0.075f, 0.9f));
             Text status = CreateText(panel, "Status", "SOL", 28, TextAnchor.UpperLeft,
                 new Vector2(24f, -70f), new Vector2(-24f, -18f));
@@ -293,16 +319,25 @@ namespace Solarium.ThreeD.Editor
                 new Color(0.95f, 0.25f, 0.18f));
             Image energy = CreateBar(panel, "Energy", new Vector2(24f, -150f), new Vector2(-24f, -124f),
                 new Color(0.98f, 0.78f, 0.16f));
+            Text healthValue = CreateText(panel, "Health Value", string.Empty, 17, TextAnchor.MiddleCenter,
+                new Vector2(24f, -112f), new Vector2(-24f, -86f));
+            Text energyValue = CreateText(panel, "Energy Value", string.Empty, 17, TextAnchor.MiddleCenter,
+                new Vector2(24f, -150f), new Vector2(-24f, -124f));
             Text metrics = CreateText(panel, "Metrics", string.Empty, 21, TextAnchor.UpperLeft,
                 new Vector2(24f, -236f), new Vector2(-24f, -166f));
+            Text world = CreateText(panel, "World", string.Empty, 19, TextAnchor.UpperLeft,
+                new Vector2(24f, -320f), new Vector2(-24f, -250f));
 
             RectTransform controls = CreatePanel(canvasObject.transform, "Controls",
-                new Vector2(1f, 0f), new Vector2(1f, 0f), new Vector2(-500f, 28f), new Vector2(-28f, 112f),
+                new Vector2(1f, 0f), new Vector2(1f, 0f), new Vector2(-650f, 28f), new Vector2(-28f, 112f),
                 new Color(0.035f, 0.075f, 0.075f, 0.88f));
             Button pause = CreateButton(controls, "Pause", "PAUSA", new Vector2(16f, 16f), new Vector2(142f, -16f), out Text pauseText);
             Button speed1 = CreateButton(controls, "Speed 1", "1×", new Vector2(156f, 16f), new Vector2(244f, -16f), out _);
             Button speed2 = CreateButton(controls, "Speed 2", "2×", new Vector2(258f, 16f), new Vector2(346f, -16f), out _);
             Button speed5 = CreateButton(controls, "Speed 5", "5×", new Vector2(360f, 16f), new Vector2(448f, -16f), out _);
+
+            Button newWorld = CreateButton(controls, "New World", "NUEVO MUNDO",
+                new Vector2(462f, 16f), new Vector2(594f, -16f), out _);
 
             var transitionObject = new GameObject("Episode Transition", typeof(RectTransform), typeof(CanvasGroup), typeof(Image));
             transitionObject.transform.SetParent(canvasObject.transform, false);
@@ -317,9 +352,21 @@ namespace Solarium.ThreeD.Editor
             Text death = CreateText(transitionRect, "Death Reason", string.Empty, 42, TextAnchor.MiddleCenter,
                 new Vector2(0f, 0f), new Vector2(0f, 0f), true);
 
+            RectTransform confirmationPanel = CreatePanel(canvasObject.transform, "New World Confirmation",
+                new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-250f, -110f), new Vector2(250f, 110f),
+                new Color(0.025f, 0.06f, 0.06f, 0.97f));
+            CanvasGroup confirmation = confirmationPanel.gameObject.AddComponent<CanvasGroup>();
+            CreateText(confirmationPanel, "Confirmation Message",
+                "¿CREAR UN MUNDO NUEVO?\nSe sustituirá la partida guardada.", 24, TextAnchor.UpperCenter,
+                new Vector2(20f, -100f), new Vector2(-20f, -20f));
+            Button confirmNewWorld = CreateButton(confirmationPanel, "Confirm New World", "CREAR",
+                new Vector2(30f, 20f), new Vector2(220f, -140f), out _);
+            Button cancelNewWorld = CreateButton(confirmationPanel, "Cancel New World", "CANCELAR",
+                new Vector2(280f, 20f), new Vector2(470f, -140f), out _);
+
             canvasObject.AddComponent<SolariumHUD3D>().Initialize(
-                environment, health, energy, status, metrics, death, pauseText,
-                pause, speed1, speed2, speed5, transition);
+                environment, health, energy, healthValue, energyValue, status, metrics, world, death, pauseText,
+                pause, speed1, speed2, speed5, newWorld, confirmNewWorld, cancelNewWorld, transition, confirmation);
         }
 
         private static RectTransform CreatePanel(
@@ -366,12 +413,12 @@ namespace Solarium.ThreeD.Editor
             RectTransform rect = (RectTransform)fillObject.transform;
             rect.anchorMin = Vector2.zero;
             rect.anchorMax = Vector2.one;
+            rect.pivot = new Vector2(0f, 0.5f);
             rect.offsetMin = new Vector2(3f, 3f);
             rect.offsetMax = new Vector2(-3f, -3f);
             Image image = fillObject.GetComponent<Image>();
             image.color = fillColor;
-            image.type = Image.Type.Filled;
-            image.fillMethod = Image.FillMethod.Horizontal;
+            image.type = Image.Type.Simple;
             return image;
         }
 

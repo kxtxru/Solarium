@@ -41,6 +41,7 @@ namespace Solarium.ThreeD
             random = new System.Random(InfiniteWorldMath3D.ChunkSeed(world.WorldSeed, coord));
             state.biome = InfiniteWorldMath3D.BiomeFor(world.WorldSeed, coord);
             validator.Reset(physicalCenter, new Vector2(size, size), 0.8f);
+            validator.TryReserveCircle(physicalCenter, 0.55f, environment.Settings.spawnClearance, "safe_center");
 
             CreateGround(state.biome);
             CreateFoods(state.biome);
@@ -115,6 +116,8 @@ namespace Solarium.ThreeD
                 Biome3D.Wetland => 2,
                 _ => 1
             };
+            int pressureReduction = Mathf.FloorToInt(Mathf.Clamp01(environment.CurrentConfig.difficulty) * 2.5f);
+            regularCount = Mathf.Max(1, regularCount - pressureReduction);
             for (int i = 0; i < regularCount; i++)
                 CreateFood($"food_{i}", false, i);
             if (InfiniteWorldMath3D.ChunkSeed(world.WorldSeed ^ 0x16B7, chunkCoord) % 5 == 0)
@@ -124,7 +127,17 @@ namespace Solarium.ThreeD
         private void CreateFood(string id, bool golden, int fallbackIndex)
         {
             float radius = golden ? 0.48f : 0.36f;
-            Vector2 position = FindResourcePoint(radius, 0.35f, id, fallbackIndex);
+            Vector2 position;
+            if (id == "food_0")
+            {
+                position = chunkCenter + new Vector2(0f, 6f);
+                if (!validator.TryReserveCircle(position, radius, 0.35f, id))
+                    position = FindResourcePoint(radius, 0.35f, id, fallbackIndex);
+            }
+            else
+            {
+                position = FindResourcePoint(radius, 0.35f, id, fallbackIndex);
+            }
             GameObject go = Rent(golden ? "golden_food" : "food",
                 () => BuildTrigger(golden ? "Golden Food" : "Food", 0.42f, golden ? VisualKind3D.GoldenFood : VisualKind3D.Food),
                 golden ? "GoldenFood" : "Food", position, 0.48f, Vector3.one);
@@ -159,6 +172,8 @@ namespace Solarium.ThreeD
         private void CreateRations(Biome3D biome)
         {
             int count = biome == Biome3D.Meadow ? 2 : 1;
+            if (environment.CurrentConfig.difficulty >= 0.35f)
+                count++;
             for (int i = 0; i < count; i++)
             {
                 string id = $"ration_{i}";
@@ -294,7 +309,25 @@ namespace Solarium.ThreeD
                 if (validator.TryReserveCircle(candidate, radius, clearance, kind))
                     return candidate;
             }
-            return chunkCenter + new Vector2(5f, 5f);
+
+            const float cell = 1.5f;
+            int width = Mathf.Max(1, Mathf.FloorToInt((chunkSize - 2f) / cell));
+            int total = width * width;
+            int start = InfiniteWorldMath3D.PositiveMod(
+                InfiniteWorldMath3D.ChunkSeed(world.WorldSeed + fallbackIndex * 31, chunkCoord), total);
+            for (int offset = 0; offset < total; offset++)
+            {
+                int index = (start + offset) % total;
+                int x = index % width;
+                int y = index / width;
+                Vector2 local = new(
+                    -chunkSize * 0.5f + 1f + (x + 0.5f) * cell,
+                    -chunkSize * 0.5f + 1f + (y + 0.5f) * cell);
+                Vector2 candidate = chunkCenter + local;
+                if (validator.TryReserveCircle(candidate, radius, clearance, kind))
+                    return candidate;
+            }
+            throw new InvalidOperationException($"Chunk {chunkCoord} cannot place required entity {kind} without overlap.");
         }
 
         private bool TryFindBlockingRect(Vector2 size, float clearance, string kind, out Vector2 found)

@@ -36,7 +36,7 @@ namespace Solarium.ThreeD
             // The automated capture exits much sooner than a normal player session.
             // Shut down policies first, then the shared model runner, so inference
             // GPU buffers are released deterministically before Application.Quit.
-            foreach (SolAgent3D agent in FindObjectsByType<SolAgent3D>(FindObjectsSortMode.None))
+            foreach (SolAgent3D agent in FindObjectsByType<SolAgent3D>())
                 agent.enabled = false;
             if (Academy.IsInitialized)
                 Academy.Instance.Dispose();

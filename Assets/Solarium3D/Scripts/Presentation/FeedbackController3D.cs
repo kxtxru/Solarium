@@ -11,11 +11,14 @@ namespace Solarium.ThreeD
         private ParticleSystem[] particles;
         private int nextParticle;
         private ProceduralAudio3D audioPlayer;
+        private bool subscribed;
 
         public void Initialize(SolariumEnvironment3D owner, SolariumPalette3D visualPalette)
         {
+            Unsubscribe();
             environment = owner;
             palette = visualPalette;
+            Subscribe();
         }
 
         private void Awake()
@@ -28,14 +31,12 @@ namespace Solarium.ThreeD
 
         private void OnEnable()
         {
-            if (environment != null)
-                environment.FeedbackRequested += Play;
+            Subscribe();
         }
 
         private void OnDisable()
         {
-            if (environment != null)
-                environment.FeedbackRequested -= Play;
+            Unsubscribe();
         }
 
         private void Play(Vector3 position, FeedbackKind3D kind)
@@ -47,6 +48,34 @@ namespace Solarium.ThreeD
             main.startSize = kind == FeedbackKind3D.Death ? 0.2f : 0.12f;
             particle.Play(true);
             audioPlayer.Play(kind);
+        }
+
+        private void Subscribe()
+        {
+            if (subscribed || environment == null)
+                return;
+            environment.FeedbackRequested += Play;
+            if (environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted += HandleOriginShift;
+            subscribed = true;
+        }
+
+        private void Unsubscribe()
+        {
+            if (!subscribed || environment == null)
+                return;
+            environment.FeedbackRequested -= Play;
+            if (environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted -= HandleOriginShift;
+            subscribed = false;
+        }
+
+        private void HandleOriginShift(Vector3 shift)
+        {
+            if (particles == null)
+                return;
+            foreach (ParticleSystem particle in particles)
+                particle?.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
         private ParticleSystem CreateParticleSystem(int index)
@@ -80,6 +109,7 @@ namespace Solarium.ThreeD
             FeedbackKind3D.Healing => new Color(0.2f, 0.85f, 1f),
             FeedbackKind3D.SupplyPickup => new Color(1f, 0.35f, 0.95f),
             FeedbackKind3D.SupplyDeposit => new Color(0.2f, 1f, 0.85f),
+            FeedbackKind3D.ReserveUse => new Color(0.55f, 1f, 0.28f),
             FeedbackKind3D.Damage => new Color(1f, 0.15f, 0.12f),
             _ => new Color(1f, 0.35f, 0.1f)
         };

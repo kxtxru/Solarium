@@ -28,6 +28,7 @@ namespace Solarium.ThreeD
             clips[FeedbackKind3D.Healing] = CreateTone("Healing", 420f, 700f, 0.25f);
             clips[FeedbackKind3D.SupplyPickup] = CreateTone("Supply", 520f, 640f, 0.12f);
             clips[FeedbackKind3D.SupplyDeposit] = CreateTone("Deposit", 480f, 960f, 0.22f);
+            clips[FeedbackKind3D.ReserveUse] = CreateTone("Reserve Use", 520f, 920f, 0.18f);
             clips[FeedbackKind3D.Damage] = CreateTone("Damage", 170f, 90f, 0.13f);
             clips[FeedbackKind3D.Death] = CreateTone("Death", 220f, 55f, 0.4f);
         }

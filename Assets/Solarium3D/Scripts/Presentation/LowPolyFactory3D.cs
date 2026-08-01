@@ -92,6 +92,14 @@ namespace Solarium.ThreeD
                     BuildSanctuary(root, palette);
                     break;
                 case VisualKind3D.Supply:
+                    CreatePart(root, "Ration Fruit", PrimitiveType.Sphere, new Vector3(0f, 0.48f, 0f),
+                        new Vector3(0.5f, 0.56f, 0.5f), palette.Get(VisualKind3D.Food));
+                    CreatePart(root, "Ration Wrap", PrimitiveType.Cube, new Vector3(0f, 0.46f, 0f),
+                        new Vector3(0.58f, 0.18f, 0.58f), palette.Get(kind), new Vector3(0f, 28f, 0f));
+                    CreatePart(root, "Ration Leaf", PrimitiveType.Cube, new Vector3(0.12f, 0.8f, 0f),
+                        new Vector3(0.08f, 0.16f, 0.28f), palette.Get(VisualKind3D.Foliage),
+                        new Vector3(15f, 25f, 42f));
+                    break;
                 case VisualKind3D.GoldenFood:
                     CreatePart(root, "Main Crystal", PrimitiveType.Cube, new Vector3(0f, 0.5f, 0f),
                         new Vector3(0.42f, 0.72f, 0.42f), palette.Get(kind), new Vector3(20f, 45f, 20f));

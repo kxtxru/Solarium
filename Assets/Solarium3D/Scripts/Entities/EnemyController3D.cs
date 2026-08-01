@@ -21,6 +21,8 @@ namespace Solarium.ThreeD
 
         public void Initialize(SolariumEnvironment3D owner, bool isPatroller, Vector2 origin)
         {
+            if (environment != null && environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted -= HandleOriginShift;
             environment = owner;
             patroller = isPatroller;
             chasing = false;
@@ -33,6 +35,8 @@ namespace Solarium.ThreeD
             body.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
             body.interpolation = RigidbodyInterpolation.Interpolate;
             body.linearVelocity = Vector3.zero;
+            if (environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted += HandleOriginShift;
         }
 
         private void FixedUpdate()
@@ -111,6 +115,8 @@ namespace Solarium.ThreeD
 
         private bool IsAgentNearArenaEdge()
         {
+            if (environment.InfiniteWorld != null && environment.InfiniteWorld.IsInfinite)
+                return false;
             Vector2 relative = Planar3D.ToPlanar(environment.Agent.transform.position - environment.transform.position);
             Vector2 half = environment.CurrentConfig.arenaSize * 0.5f;
             const float margin = 1.5f;
@@ -131,6 +137,21 @@ namespace Solarium.ThreeD
             retreatUntil = Time.time + environment.Settings.enemyRetreatSeconds;
             chasing = false;
             agent.ApplyKnockback(away, environment.Settings.enemyKnockbackSpeed, environment.Settings.enemyKnockbackSeconds);
+        }
+
+        private void HandleOriginShift(Vector3 shift)
+        {
+            Vector2 planar = Planar3D.ToPlanarDirection(shift);
+            patrolOrigin += planar;
+            patrolTarget += planar;
+        }
+
+        private void OnDisable()
+        {
+            if (environment != null && environment.InfiniteWorld != null)
+                environment.InfiniteWorld.OriginShifted -= HandleOriginShift;
+            if (body != null)
+                body.linearVelocity = Vector3.zero;
         }
     }
 }

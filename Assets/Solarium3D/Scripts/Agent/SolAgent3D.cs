@@ -53,6 +53,19 @@ namespace Solarium.ThreeD
         {
             environment = owner;
             observations.Initialize(owner, vitals, body, rayCount);
+            EnsureVisual();
+        }
+
+        private void EnsureVisual()
+        {
+            if (environment == null
+                || !environment.VisualsEnabled
+                || GetComponent<PlanarMotionVisual3D>() != null)
+                return;
+
+            Transform visual = transform.Find("Sol Visual")
+                ?? LowPolyFactory3D.BuildSol(transform, environment.Palette);
+            gameObject.AddComponent<PlanarMotionVisual3D>().Configure(visual, 0.05f, true);
         }
 
         public override void OnEpisodeBegin()
@@ -67,6 +80,12 @@ namespace Solarium.ThreeD
 
         public override void CollectObservations(VectorSensor sensor) =>
             observations.Write(sensor, IsSprinting);
+
+        public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)
+        {
+            if (environment == null || !environment.CanInteract(this))
+                actionMask.SetActionEnabled(1, 1, false);
+        }
 
         public override void OnActionReceived(ActionBuffers actions)
         {
